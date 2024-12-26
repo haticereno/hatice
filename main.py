@@ -1,11 +1,15 @@
-note =
-float(input("Abschlussnote(0-100): "))
-erfahrung =
-int(input("Programmierefahrung (1-5): "))
+# Startguthaben
+konto = 1000
 
-if note > 90 or (erfahrung == 5 and note >= 70):
-  print("einstellen")
-elif note > 70 or erfahrung == 4:
-   print("zum Gesprach einladen")
-else:
-  print("ablehnen")
+print("Ihr aktuelles Guthaben beträgt: {konto} EURO")
+aktion = input("Möchten Sie 'einzahlen' oder 'abheben'? ").strip().lower()
+
+if aktion == "einzahlen":
+    betrag = int(input("Wie viel möchten Sie einzahlen? "))
+    konto += betrag
+
+elif aktion == "abheben":
+    betrag = int(input("Wie viel möchten Sie abheben? "))
+    konto -= betrag
+
+print("Ihr aktuelles Guthaben beträgt jetzt: {konto} EURO")
